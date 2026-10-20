@@ -1,0 +1,20 @@
+{
+  "name": "missioncontrol-ai",
+  "version": "1.0.0",
+  "private": true,
+  "description": "MissionControl AI - an action-oriented AI team coordinator (simulated Alexa+ experience). Zero runtime dependencies: Node 22 + built-in SQLite.",
+  "type": "module",
+  "engines": {
+    "node": ">=22.18.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env --disable-warning=ExperimentalWarning server/index.ts",
+    "dev": "node --watch --env-file-if-exists=.env --disable-warning=ExperimentalWarning server/index.ts",
+    "db:migrate": "node --disable-warning=ExperimentalWarning scripts/migrate.ts",
+    "demo:reset": "node --disable-warning=ExperimentalWarning scripts/reset-demo.ts",
+    "test": "node --disable-warning=ExperimentalWarning --test \"tests/**/*.test.ts\""
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.1153.0"
+  }
+}
